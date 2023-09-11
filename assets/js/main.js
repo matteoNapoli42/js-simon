@@ -25,5 +25,25 @@ const secInMin = 1000*60*60;
 //numero di millisecondi presenti in 24 ore 
 const minInHours = 1000*60*60*24;
 
+let x = setInterval(function() {
 
+
+let oggi = new Date().getTime();
+
+let distance = countDownDate - oggi;
+  
+  let days = Math.floor(distance / (minInHours));
+  let hours = Math.floor((distance % (minInHours)) / (secInMin));
+  let minutes = Math.floor((distance % (secInMin)) / (msInSec));
+  let seconds = Math.floor((distance % (msInSec)) / ms);
+
+  
+  document.getElementById("countdown").innerHTML = days + "d " + + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}
+)
 
